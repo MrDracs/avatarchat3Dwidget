@@ -1,0 +1,247 @@
+:root {
+    --navy: #203162;
+    --light-blue: #89c7fc;
+    --yellow: #ffc610;
+    --orange: #ff9839;
+    --green: #00a289;
+    --peach: #ffe3c9;
+    --sky: #c3dbf1;
+}
+
+
+.bg {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    font: 15px Quicksand, sans-serif;
+    flex-direction: column;
+    background-color: var(--peach);
+}
+
+#headerbox {
+    justify-self: center;
+    margin: auto;
+    width: 100%;
+    max-width: 95%;
+    font: 15px Quicksand, sans-serif;
+}
+
+#headerr {
+    font: 30px Quicksand, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    padding: 20px 25px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.404);
+    border-radius: 15px;
+    margin-bottom: 1%;
+    color: var(--navy);
+    border: none;
+}
+
+#bodybox {
+    display: flex;
+    margin: 0;
+    max-width: 100%;
+    font: 15px Quicksand, sans-serif;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.407);
+    border-radius: 15px;
+    border: none;
+    justify-items: center;
+}
+
+#chatborder {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 60%;
+    border-width: 3px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    overflow-y: auto;
+    min-height: 60vh;
+    max-height: 60vh;
+}
+
+/* Custom scrollbar styles for #chatborder */
+#chatborder::-webkit-scrollbar {
+    width: 5px;
+    height: 1px;
+}
+
+#chatborder::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 100px;
+}
+
+#chatborder::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#AgentModel {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-self: center;
+}
+
+iframe{
+    width: 45em;
+    height: 35em;
+    max-width: 50ems;
+    max-height: 50em;
+    object-fit: contain;
+    margin: auto;
+    max-height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+#line {
+    width: 5px;
+    border-radius: 10em;
+    background-color: #c6c6c6;
+    margin: 10px 0;
+    margin-left: 2%;
+}
+
+
+
+
+#inputArea {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+}
+
+#chatbox {
+    font: 1.2em Quicksand, sans-serif;
+    height: rem;
+    align-self: center;
+    width: calc(100% - 20px);
+    border: none;
+    border-radius: 0.4em;
+    padding: 5px 10px;
+}
+
+h1 {
+    margin: auto;
+}
+
+pre {
+    background-color: #f0f0f0;
+    margin-left: 20px;
+}
+
+/* Chat bubble for user messages */
+.user {
+    background-color: var(--orange);
+    align-self: flex-end;
+    border-radius: 15px 15px 0 15px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-size: 15px;
+}
+
+/* Chat bubble for virtual agent (bot) messages */
+.bot {
+    background-color: var(--sky);
+    align-self: flex-start;
+    border-radius: 15px 15px 15px 0;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+    font-size: 15px;
+}
+
+/* Button styles */
+#startStopButton, #sendButton {
+    font: 1.2em Quicksand, sans-serif;
+    padding: 10px;
+    margin: 0.2em;
+    height: 2.5rem;
+    align-self: center;
+    border: none;
+    display: flex;
+    background-color: var(--orange);
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+#startStopButton {
+    margin-left: 0.6em;
+}
+#mic{
+    height: 100%;
+}
+#send{
+    height: 100%;
+}
+
+#startStopButton:hover {
+    background-color: var(--yellow);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 800px) or (orientation: portrait) {
+    #headerbox {
+        max-width: 95%;
+    }
+
+    #bodybox {
+        flex-direction: column;
+        height: 70vh; /* Adjust based on your header size */
+    }
+
+    #AgentModel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    iframe{
+        width: 90em;
+        height: 15em;
+        max-width: 100%;
+        
+        object-fit: contain;
+    }
+
+    #chatborder {
+        flex: 2;
+        width: 100%;
+        margin: auto;
+        min-height: 0;
+        max-height: none;
+        height: 100%;
+    }
+
+    #line {
+        height: 2px;
+        width: 100%;
+    }
+
+    #inputArea {
+        width: 100%;
+    }
+
+    .support {
+        max-height: 30vh;
+        width: auto;
+        object-fit: contain;
+    }
+}
